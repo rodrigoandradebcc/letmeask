@@ -1,7 +1,22 @@
+import { BrowserRouter, Route } from 'react-router-dom';
+import { AuthContextProvider } from './contexts/AuthContext';
+import { Home } from './pages/Home';
+import { NewRoom } from './pages/NewRoom';
+import './styles/global.scss';
+
+
+
 
 function App() {
+  
+
   return (
-   <h1>AAAAA</h1>
+   <BrowserRouter>
+    <AuthContextProvider>
+      <Route path='/' exact component={Home}/>
+      <Route path='/rooms/new' component={NewRoom}/>
+    </AuthContextProvider>
+   </BrowserRouter>
   );
 }
 
